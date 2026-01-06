@@ -56,6 +56,9 @@ export default function HomePage() {
           </Link>
         </div>
 
+      <p className="text-2xl p-6 font-bold  text-gray-800">Environment: {process.env.NEXT_PUBLIC_ENV}</p>
+      <p className="text-2xl  p-6 font-bold  text-gray-800">API URL: {process.env.NEXT_PUBLIC_API_URL}</p>
+
         <p className="text-xs text-gray-400 text-center mt-8">
           Built with Next.js App Router + Tailwind CSS
         </p>
