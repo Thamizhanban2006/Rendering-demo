@@ -48,3 +48,45 @@ DailyEdge initially used static rendering for all pages, resulting in outdated â
 ### Optimized Approach:
 - **Homepage:** Static Rendering (SSG) for fast load times
 - **Breaking News Sec**
+
+
+# Multi-Environment Deployment & Secret Management
+
+## Environment-Aware Builds
+
+We configured separate environment files:
+- `.env.development`
+- `.env.staging`
+- `.env.production`
+
+Each environment points to different API endpoints and configurations, ensuring safe testing before production deployment.
+
+
+
+---
+
+## Secure Secret Management
+
+Sensitive values such as API URLs and database credentials are stored securely using **GitHub Secrets**. These secrets are injected during the CI/CD build process and are never hardcoded or committed to the repository.
+
+---
+
+## Why Environment Segregation Matters
+
+Separating development, staging, and production environments:
+- Prevents accidental production data loss
+- Enables safe testing and validation
+- Improves deployment reliability and confidence
+
+Secure secret management ensures sensitive credentials are protected from leaks and misuse.
+
+---
+
+## Case Study: ShopLite Incident
+
+The issue occurred because staging credentials were used in production. This could have been prevented by:
+- Strict environment-specific configuration files
+- Using GitHub Secrets per environment
+- Environment-aware CI/CD pipelines
+
+This approach ensures production data remains isolated and protected.
